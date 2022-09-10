@@ -17,3 +17,72 @@ function time() {
     $("#Today").text(today.format("dddd, MMM Do"));
 };
 
+// creating for loop to go through each block time
+// if statement to add color
+
+function checkTime() {
+    let currentTime = moment().format("H");
+    $("textarea").removeClass("present past future");
+
+    for (let i = 0; i < timeBlocks.length; i++) {
+        letcalTime = timeBlocks[i].id;
+
+    if(currentTime < calTime){
+            $(timeBlocks[i]).addClass("future");
+    } else if(currentTime > calTime){
+            $(timeBlocks[i]).addClass("past");
+    } else{
+            $(timeBlocks[i]).addClass("present");
+
+        }
+    }
+}
+
+// every 1 minute updates
+    setInterval(function(){
+        time();
+        checkTime();
+    }, 60000);
+
+    function display(){
+        // local storage
+
+        if (old7 != ""){
+            timeBlocks[0].textContent = old7;
+        }
+        if (old8 != ""){
+            timeBlocks[1].textContent = old8;
+        }
+        if (old9 != ""){
+            timeBlocks[2].textContent = old9;
+        }
+        if (old10 != ""){
+            timeBlocks[3].textContent = old10;
+        }
+        if (old11 != ""){
+            timeBlocks[4].textContent = old11;
+        }
+        if (old12 != ""){
+            timeBlocks[5].textContent = old12;
+        }
+        if (old13 != ""){
+            timeBlocks[6].textContent = old13;
+        }
+        if (old14 != ""){
+            timeBlocks[7].textContent = old14;
+        }
+        if (old15 != ""){
+            timeBlocks[8].textContent = old15;
+        }
+    }
+    
+    // adding an event listener for all save buttons
+    // save data to local storage
+    $(".saveBtn").on("click", function(event){
+        localStorage.setItem(event.target.parentNode.children[0].innerText, event.target.previousElementSibling.value);
+        display();
+    })
+
+    time();
+    checkTime();
+    display();

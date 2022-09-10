@@ -1,0 +1,27 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1;
+}
+
+textarea {
+    background: transparent;
+    border: none;
+    resize: none;
+    color: pink;
+    border-left: 1px solid black;
+    padding: 10px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color:black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+}
+
+.description {
+    white-space: pre-wrap;
+}
+
