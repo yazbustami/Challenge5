@@ -14,7 +14,7 @@ let old15 = localStorage.getItem("3PM)");
 // using moment.js for Date/Time
 function time() {
     let today = moment();
-    $("#currentDay").text(today.format("dddd, MMM Do"));
+    $("#currentDay").text(today.format("dddd, MMM Do YYYY"));
 };
 
 // creating for loop to go through each block time
